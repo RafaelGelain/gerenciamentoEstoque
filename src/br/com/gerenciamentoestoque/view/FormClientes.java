@@ -6,8 +6,11 @@
 package br.com.gerenciamentoestoque.view;
 
 import br.com.gerenciamentoestoque.dao.ClientesDAO;
+import br.com.gerenciamentoestoque.func.Utilitarios;
 import br.com.gerenciamentoestoque.model.Clientes;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,6 +21,31 @@ public class FormClientes extends javax.swing.JFrame {
     /**
      * Creates new form FormClientes
      */
+    public void listar(){
+        ClientesDAO dao = new ClientesDAO();
+        List<Clientes> lista = dao.listar();
+        DefaultTableModel dados = (DefaultTableModel) tabela.getModel();
+            dados.setNumRows(0);
+            for(Clientes c : lista){
+                dados.addRow(new Object[]{
+                  c.getId(),
+                  c.getNome(),
+                  c.getRg(),
+                  c.getCpf(),
+                  c.getEmail(),
+                  c.getTelefone(),
+                  c.getCelular(),
+                  c.getCep(),
+                  c.getEndereco(),
+                  c.getNumero(),
+                  c.getComplemento(),
+                  c.getBairro(),
+                  c.getEstado()
+                    
+                });
+            }
+    }
+    
     public FormClientes() {
         initComponents();
     }
@@ -39,7 +67,7 @@ public class FormClientes extends javax.swing.JFrame {
         txtPesquisaNome = new javax.swing.JTextField();
         btnPesquisaNome = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabela_clientes = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
         tabela_dadosclientes = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtCodCliente = new javax.swing.JTextField();
@@ -76,7 +104,11 @@ public class FormClientes extends javax.swing.JFrame {
         btnImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(14, 66, 86));
 
@@ -109,7 +141,7 @@ public class FormClientes extends javax.swing.JFrame {
 
         btnPesquisaNome.setText("Pesquisar");
 
-        tabela_clientes.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -117,7 +149,7 @@ public class FormClientes extends javax.swing.JFrame {
                 "CodCliente", "Nome", "Email", "Telefone", "Cpf", "Endereço", "Bairro", "Cidade", "Complemento", "Cep"
             }
         ));
-        jScrollPane1.setViewportView(tabela_clientes);
+        jScrollPane1.setViewportView(tabela);
 
         javax.swing.GroupLayout tabela_consultaLayout = new javax.swing.GroupLayout(tabela_consulta);
         tabela_consulta.setLayout(tabela_consultaLayout);
@@ -359,6 +391,11 @@ public class FormClientes extends javax.swing.JFrame {
 
         btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gerenciamentoestoque/imagens/icone_adicionar.png"))); // NOI18N
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gerenciamentoestoque/imagens/icone_salvar.png"))); // NOI18N
         btnSalvar.setText("Salvar");
@@ -437,6 +474,8 @@ public class FormClientes extends javax.swing.JFrame {
         
         ClientesDAO dao = new ClientesDAO();
         dao.Salvar(obj);
+        Utilitarios utili = new Utilitarios();
+        utili.LimparTela(tabela_dadosclientes);
 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -465,6 +504,16 @@ public class FormClientes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cliente Não Encontrado");
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        //Função Limpar Tela
+        Utilitarios utili = new Utilitarios();
+        utili.LimparTela(tabela_dadosclientes);
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        listar();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -528,7 +577,7 @@ public class FormClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabela_clientes;
+    private javax.swing.JTable tabela;
     private javax.swing.JPanel tabela_consulta;
     private javax.swing.JPanel tabela_dadosclientes;
     private javax.swing.JTextField txtBairro;
