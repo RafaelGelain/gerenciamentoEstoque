@@ -141,7 +141,7 @@ public class FormFuncionarios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id", "nome", "email", "senha", "cargo", "nivel", "telefone", "celular", "cep", "endereço", "numero", "bairro", "cidade", "complemento", "UF", "RG", "uf"
+                "Id", "Nome", "RG", "CPF", "Email", "Senha", "Cargo", "Nivel", "Telefone", "Celular", "CEP", "Endereco", "Numero", "Complemento", "Bairro", "Cidade", "Estado"
             }
         ) {
             boolean[] canEdit = new boolean [] {

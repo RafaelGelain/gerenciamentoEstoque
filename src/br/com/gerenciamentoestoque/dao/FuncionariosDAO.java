@@ -3,6 +3,8 @@ package br.com.gerenciamentoestoque.dao;
 import br.com.gerenciamentoestoque.jdbc.ConexaoBC;
 import br.com.gerenciamentoestoque.model.Clientes;
 import br.com.gerenciamentoestoque.model.Funcionarios;
+import br.com.gerenciamentoestoque.view.FormLogin;
+import br.com.gerenciamentoestoque.view.Main;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -200,5 +202,25 @@ public class FuncionariosDAO {
             JOptionPane.showMessageDialog(null, "Erro Ao Criar a Lista" + erro);
         }
         return null;
+    }
+    public void efetuarLogin(String email, String senha){
+        try {
+            String sql = "select * from funcionarios where email=? and senha=?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            stmt.setString(2, senha);
+            
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Seja Bem Vindo Ao Sistema");
+                Main at = new Main();
+                at.setVisible(true);
+            }else{
+                FormLogin login = new FormLogin();
+                JOptionPane.showMessageDialog(null, "Dados Invalidos");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "erro"+e);
+        }
     }
 }
