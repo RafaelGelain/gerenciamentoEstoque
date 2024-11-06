@@ -116,6 +116,17 @@ public class FormFornecedores extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Nome");
 
+        txtPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisaNomeActionPerformed(evt);
+            }
+        });
+        txtPesquisaNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPesquisaNomeKeyPressed(evt);
+            }
+        });
+
         btnPesquisaNome.setText("Pesquisar");
         btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -635,6 +646,37 @@ public class FormFornecedores extends javax.swing.JFrame {
         cbUF.setSelectedItem(tabela.getValueAt(tabela.getSelectedRow(), 12).toString());
         }
     }//GEN-LAST:event_tabelaKeyPressed
+
+    private void txtPesquisaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisaNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisaNomeActionPerformed
+
+    private void txtPesquisaNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        String nome = "%"+txtPesquisaNome.getText()+"%";
+        FornecedoresDAO dao = new FornecedoresDAO();
+        List<Fornecedores> lista = dao.filtrar(nome);
+        DefaultTableModel dados = (DefaultTableModel) tabela.getModel();
+            dados.setNumRows(0);
+            for(Fornecedores c : lista){
+                dados.addRow(new Object[]{
+                  c.getId(),
+                  c.getNome(),
+                  c.getCnpj(),
+                  c.getEmail(),
+                  c.getTelefone(),
+                  c.getCelular(),
+                  c.getCep(),
+                  c.getEndereco(),
+                  c.getNumero(),
+                  c.getComplemento(),
+                  c.getBairro(),
+                  c.getCidade(),
+                  c.getEstado()
+                });
+            }
+    }
+    }//GEN-LAST:event_txtPesquisaNomeKeyPressed
 
     /**
      * @param args the command line arguments

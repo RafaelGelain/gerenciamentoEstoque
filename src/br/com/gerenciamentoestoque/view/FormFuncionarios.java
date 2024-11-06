@@ -129,6 +129,12 @@ public class FormFuncionarios extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Nome");
 
+        txtPesquisaNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPesquisaNomeKeyPressed(evt);
+            }
+        });
+
         btnPesquisaNome.setText("Pesquisar");
         btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -727,6 +733,37 @@ public class FormFuncionarios extends javax.swing.JFrame {
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
+
+    private void txtPesquisaNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        String nome = "%"+txtPesquisaNome.getText()+"%";
+        FuncionariosDAO dao = new FuncionariosDAO();
+        List<Funcionarios> lista = dao.filtrar(nome);
+        DefaultTableModel dados = (DefaultTableModel) tabela.getModel();
+            dados.setNumRows(0);
+            for(Funcionarios c : lista){
+                dados.addRow(new Object[]{
+                  c.getId(),
+                  c.getNome(),
+                  c.getRg(),
+                  c.getCpf(),
+                  c.getEmail(),
+                  c.getSenha(),
+                  c.getCargo(),
+                  c.getNivel(),
+                  c.getTelefone(),
+                  c.getCelular(),
+                  c.getCep(),
+                  c.getEndereco(),
+                  c.getNumero(),
+                  c.getComplemento(),
+                  c.getBairro(),
+                  c.getCidade(),
+                  c.getEstado()
+                });
+            }
+        }
+    }//GEN-LAST:event_txtPesquisaNomeKeyPressed
 
     /**
      * @param args the command line arguments
