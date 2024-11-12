@@ -1,10 +1,8 @@
 package br.com.gerenciamentoestoque.view;
 
-import br.com.gerenciamentoestoque.dao.ClientesDAO;
 import br.com.gerenciamentoestoque.dao.FornecedoresDAO;
 import br.com.gerenciamentoestoque.dao.ProdutosDAO;
 import br.com.gerenciamentoestoque.func.Utilitarios;
-import br.com.gerenciamentoestoque.model.Clientes;
 import br.com.gerenciamentoestoque.model.Fornecedores;
 import br.com.gerenciamentoestoque.model.Produtos;
 import java.awt.event.KeyEvent;
@@ -164,8 +162,7 @@ public class FormProdutos extends javax.swing.JFrame {
                     .addComponent(txtPesquisaDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPesquisa))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE))
         );
 
         Tabela_Cliente.addTab("Consulta De Produtos", tabela_consulta);
@@ -448,7 +445,7 @@ public class FormProdutos extends javax.swing.JFrame {
                 p.getDescricao(),
                 p.getPreco(),
                 p.getQtd_estoque(),
-                p.getFornecedores().getId()
+                p.getFornecedores().getNome()
 
             });
         }
@@ -506,7 +503,12 @@ public class FormProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtQtdEstoqueActionPerformed
 
     private void cbFornecedorAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cbFornecedorAncestorAdded
-
+        FornecedoresDAO dao = new FornecedoresDAO();
+        List<Fornecedores> lista = dao.listar();
+        cbFornecedor.removeAllItems();
+        for(Fornecedores f: lista){
+        cbFornecedor.addItem(f);
+        }
     }//GEN-LAST:event_cbFornecedorAncestorAdded
 
     private void cbFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbFornecedorMouseClicked
@@ -535,7 +537,7 @@ public class FormProdutos extends javax.swing.JFrame {
                 p.getDescricao(),
                 p.getPreco(),
                 p.getQtd_estoque(),
-                p.getFornecedores().getId()
+                p.getFornecedores().getNome()
 
             });
         }
@@ -579,7 +581,7 @@ public class FormProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane Tabela_Cliente;
+    public javax.swing.JTabbedPane Tabela_Cliente;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnImprimir;

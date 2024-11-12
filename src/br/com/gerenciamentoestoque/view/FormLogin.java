@@ -57,7 +57,7 @@ public class FormLogin extends javax.swing.JFrame {
         SenhaLogin.setText("Insira sua senha");
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
