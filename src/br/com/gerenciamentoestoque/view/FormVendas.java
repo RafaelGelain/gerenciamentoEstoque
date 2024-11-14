@@ -528,7 +528,6 @@ public class FormVendas extends javax.swing.JFrame {
                     .addComponent(jLabel21)
                     .addComponent(jLabel22)
                     .addComponent(jLabel20))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(TabelaMeioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TabelaMeioLayout.createSequentialGroup()
                         .addGroup(TabelaMeioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -571,6 +570,9 @@ public class FormVendas extends javax.swing.JFrame {
         TabelaInferior.setBackground(new java.awt.Color(255, 255, 255));
         TabelaInferior.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORÇAMENTO :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
         carrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -589,7 +591,9 @@ public class FormVendas extends javax.swing.JFrame {
         );
         TabelaInferiorLayout.setVerticalGroup(
             TabelaInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+            .addGroup(TabelaInferiorLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         TabelaInferior1.setBackground(new java.awt.Color(255, 255, 255));
@@ -597,6 +601,9 @@ public class FormVendas extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText("Preço Total :");
 
+        txtTotalVenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTotalVenda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTotalVenda.setEnabled(false);
         txtTotalVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalVendaActionPerformed(evt);
@@ -626,12 +633,14 @@ public class FormVendas extends javax.swing.JFrame {
             .addGroup(TabelaInferior1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(btnPagamento))
-                .addGap(30, 30, 30)
-                .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancelar)
-                    .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TabelaInferior1Layout.createSequentialGroup()
+                        .addComponent(btnPagamento)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnCancelar))
+                    .addGroup(TabelaInferior1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         TabelaInferior1Layout.setVerticalGroup(
@@ -661,12 +670,12 @@ public class FormVendas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TabelaSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TabelaMeio2, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TabelaInferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addComponent(TabelaMeio2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TabelaInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabelaInferior1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(0, 0, 0))
         );
 
         pack();

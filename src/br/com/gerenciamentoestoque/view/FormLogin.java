@@ -165,6 +165,7 @@ public class FormLogin extends javax.swing.JFrame {
             senha = txtSenha.getText();
             FuncionariosDAO dao = new FuncionariosDAO();
             dao.efetuarLogin(email, senha);
+            this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro : "+e);
         }

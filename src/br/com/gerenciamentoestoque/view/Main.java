@@ -8,6 +8,7 @@ import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.MenuElement;
 import javax.swing.plaf.basic.BasicMenuBarUI;
@@ -43,7 +44,8 @@ public class Main extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("StockManager");
@@ -195,10 +197,24 @@ public class Main extends javax.swing.JFrame {
         menuBar.add(jMenu5);
 
         jMenu6.setText("Configurações  ");
-        menuBar.add(jMenu6);
 
-        jMenu7.setText("Sair  ");
-        menuBar.add(jMenu7);
+        jMenuItem7.setText("Trocar de Usuario");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem7);
+
+        jMenuItem8.setText("Sair Do Sistema");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem8);
+
+        menuBar.add(jMenu6);
 
         customizeMenuBar(menuBar);
 
@@ -253,6 +269,21 @@ public class Main extends javax.swing.JFrame {
         FormEstoque fc = new FormEstoque();
         fc.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        FormLogin login = new FormLogin();
+        this.dispose();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        int janela = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair do sistema ?");
+        if(janela==0){
+            System.exit(0);
+        }else if(janela==1){
+
+        }
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
         //MUDAR DE COR MENU
 private void customizeMenuBar(JMenuBar menuBar) {
     menuBar.setUI(new BasicMenuBarUI() {
@@ -302,13 +333,14 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuBar menuBar;
     private java.awt.Panel painelDireita;
     private java.awt.Panel painelEsquerda;
