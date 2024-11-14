@@ -171,7 +171,7 @@ public class ProdutosDAO {
             stmt.setInt(2, id);
             stmt.execute();
             stmt.close();
-            JOptionPane.showMessageDialog(null, "Produto retirado do estoque com sucesso !");
+            //JOptionPane.showMessageDialog(null, "Produto retirado do estoque com sucesso !");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao retirar o produto do estoque " + e);
         }

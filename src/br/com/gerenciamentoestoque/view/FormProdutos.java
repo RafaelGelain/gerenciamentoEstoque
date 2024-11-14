@@ -199,6 +199,9 @@ public class FormProdutos extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Quantidade");
 
+        txtQtdEstoque.setText("0");
+        txtQtdEstoque.setToolTipText("");
+        txtQtdEstoque.setEnabled(false);
         txtQtdEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtQtdEstoqueActionPerformed(evt);

@@ -43,6 +43,8 @@ public class Main extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -167,7 +169,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenu4.setText("Produtos  ");
 
-        jMenuItem5.setText("Gerenciador de Estoque");
+        jMenuItem5.setText("Estoque");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -175,7 +177,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem5);
 
-        jMenuItem4.setText("Formulario de Produtos");
+        jMenuItem4.setText("Consultar Produto");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -194,6 +196,23 @@ public class Main extends javax.swing.JFrame {
         menuBar.add(jMenu4);
 
         jMenu5.setText("Vendas  ");
+
+        jMenuItem9.setText("Painel de Orçamentos");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem9);
+
+        jMenuItem10.setText("Historico de Vendas");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem10);
+
         menuBar.add(jMenu5);
 
         jMenu6.setText("Configurações  ");
@@ -277,14 +296,26 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        int janela = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair do sistema ?");
-        if(janela==0){
-            System.exit(0);
-        }else if(janela==1){
 
+    int confirmacao = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair do sistema ?", "Confirmação", JOptionPane.YES_NO_OPTION);
+
+    if (confirmacao == JOptionPane.YES_OPTION) {
+            System.exit(0);
+    } else {
+        JOptionPane.showMessageDialog(null, "Ação cancelada.");
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
-        //MUDAR DE COR MENU
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        FormVendas fc = new FormVendas();
+        fc.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        FormHistoricoVendas fc = new FormHistoricoVendas();
+        fc.setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
 private void customizeMenuBar(JMenuBar menuBar) {
     menuBar.setUI(new BasicMenuBarUI() {
         @Override
@@ -334,6 +365,7 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -341,6 +373,7 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBar;
     private java.awt.Panel painelDireita;
     private java.awt.Panel painelEsquerda;

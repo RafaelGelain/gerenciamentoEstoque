@@ -194,7 +194,7 @@ public class FormPagamento extends javax.swing.JFrame {
             VendasDAO vd = new VendasDAO();
             vd.salvar(v);
             v.setId(vd.retornaUltimaVenda());
-            JOptionPane.showMessageDialog(null, "ID da ultima venda"+v.getId());
+            //JOptionPane.showMessageDialog(null, "ID da ultima venda"+v.getId());
             
             for(int i=0; i<meus_produtos.getRowCount(); i++){
                 int qtd_estoque,qtd_comprada,qtd_atualizada;
@@ -212,6 +212,9 @@ public class FormPagamento extends javax.swing.JFrame {
                 pd.baixaEstoque(p.getId(), qtd_atualizada);
                 ItensVendaDAO ivd = new ItensVendaDAO();
                 ivd.salvar(item);
+                dispose();
+                FormVendas fv = new FormVendas();
+                fv.setVisible(true);
             }
         }else{
             JOptionPane.showMessageDialog(null, "Valor a ser pago não bate com o valor da venda !");
