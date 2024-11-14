@@ -173,8 +173,13 @@ public class FormProdutos extends javax.swing.JFrame {
         txtCodigo.setEditable(false);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Descrição:");
+        jLabel3.setText("Produto:");
 
+        txtDescricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescricaoActionPerformed(evt);
+            }
+        });
         txtDescricao.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtDescricaoKeyPressed(evt);
@@ -543,6 +548,10 @@ public class FormProdutos extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_txtPesquisaDescricaoKeyPressed
+
+    private void txtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescricaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescricaoActionPerformed
 
     /**
      * @param args the command line arguments
