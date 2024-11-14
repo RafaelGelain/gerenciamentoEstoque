@@ -696,11 +696,25 @@ public class FormVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_tabelaProdutoKeyPressed
 
     private void txtTotalVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalVendaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtTotalVendaActionPerformed
 
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
-
+        String nome = txtNome.getText();
+        String CPF = txtCPF.getText();
+        obj = new Clientes();
+        ClientesDAO daoc = new ClientesDAO();
+        obj = daoc.BuscarCliente(nome);
+        if (obj.getNome()!=null){
+            FormPagamento telaPagamento = new FormPagamento();
+            telaPagamento.clientes = obj;
+            telaPagamento.meus_produtos = meus_produtos;
+            telaPagamento.txtTotalVenda.setText(String.valueOf(total));
+            telaPagamento.setVisible(true);;
+            this.dispose();
+        }else{
+        JOptionPane.showMessageDialog(null, "Dados invalidos !");
+        }
     }//GEN-LAST:event_btnPagamentoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
