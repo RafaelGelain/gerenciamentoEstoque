@@ -30,7 +30,16 @@ public class Main extends javax.swing.JFrame {
         painelEsquerda = new java.awt.Panel();
         jLabel1 = new javax.swing.JLabel();
         painelEsquerdabaixo = new java.awt.Panel();
+        btnClientes = new javax.swing.JButton();
+        btnFuncionarios = new javax.swing.JButton();
+        btnFornecedores = new javax.swing.JButton();
+        btnProdutos = new javax.swing.JButton();
+        btnEstoque = new javax.swing.JButton();
+        btnVendas = new javax.swing.JButton();
+        btnHistoricoVenda = new javax.swing.JButton();
         painelDireita = new java.awt.Panel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -87,28 +96,112 @@ public class Main extends javax.swing.JFrame {
 
         painelEsquerdabaixo.setBackground(new java.awt.Color(249, 255, 255));
 
+        btnClientes.setText("Formulario de Clientes\n");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
+
+        btnFuncionarios.setText("Formulario de Funcionarios\n");
+        btnFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFuncionariosActionPerformed(evt);
+            }
+        });
+
+        btnFornecedores.setText("Formulario de Fornecedores");
+        btnFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFornecedoresActionPerformed(evt);
+            }
+        });
+
+        btnProdutos.setText("Formulario de Produtos");
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
+
+        btnEstoque.setText("Estoque");
+        btnEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstoqueActionPerformed(evt);
+            }
+        });
+
+        btnVendas.setText("Painel De Orçamentos\n");
+        btnVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendasActionPerformed(evt);
+            }
+        });
+
+        btnHistoricoVenda.setText("Historico De Vendas");
+        btnHistoricoVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoricoVendaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelEsquerdabaixoLayout = new javax.swing.GroupLayout(painelEsquerdabaixo);
         painelEsquerdabaixo.setLayout(painelEsquerdabaixoLayout);
         painelEsquerdabaixoLayout.setHorizontalGroup(
             painelEsquerdabaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGroup(painelEsquerdabaixoLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(painelEsquerdabaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHistoricoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         painelEsquerdabaixoLayout.setVerticalGroup(
             painelEsquerdabaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(painelEsquerdabaixoLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(btnEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnHistoricoVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         painelDireita.setBackground(new java.awt.Color(249, 255, 255));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Resumo das Features do Sistema de Gerenciamento de Estoque\nGestão de Clientes\n\nPossibilidade de cadastrar novos clientes, atualizar dados existentes, consultar informações e remover registros quando necessário.\nFormulário simples e intuitivo para adicionar dados como nome, endereço, telefone e CPF/CNPJ.\nGestão de Funcionários\n\nFerramenta prática para gerenciar o cadastro de funcionários, permitindo adicionar, atualizar, consultar ou excluir informações.\nCampos personalizados para registrar dados como nome, cargo e formas de contato.\nGestão de Fornecedores\n\nFunção dedicada para adicionar fornecedores, revisar ou atualizar informações e excluir registros obsoletos.\nFacilita o controle de dados como razão social, CNPJ, endereço e telefone de contato.\nGestão de Produtos e Estoque\n\nCadastro fácil de produtos com informações completas, como nome, código, categoria, preço e quantidade.\nConsulta rápida de produtos por filtros como nome ou categoria para localizar o que você precisa.\nControle de estoque integrado que atualiza automaticamente as quantidades conforme entradas e saídas.\nGestão de Vendas\n\nProcesso simplificado para realizar vendas, permitindo selecionar produtos e associar a um cliente.\nDiversas opções de formas de pagamento, como dinheiro ou cartão.\nRedução automática no estoque com base nos itens vendidos.");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout painelDireitaLayout = new javax.swing.GroupLayout(painelDireita);
         painelDireita.setLayout(painelDireitaLayout);
         painelDireitaLayout.setHorizontalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 922, Short.MAX_VALUE)
+            .addGroup(painelDireitaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE))
         );
         painelDireitaLayout.setVerticalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
+            .addGroup(painelDireitaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1))
         );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
@@ -316,6 +409,41 @@ public class Main extends javax.swing.JFrame {
         fc.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        FormClientes fc = new FormClientes();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnClientesActionPerformed
+
+    private void btnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionariosActionPerformed
+         FormFuncionarios fc = new FormFuncionarios();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnFuncionariosActionPerformed
+
+    private void btnFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFornecedoresActionPerformed
+        FormFornecedores fc = new FormFornecedores();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnFornecedoresActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        FormProdutos fc = new FormProdutos();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
+        FormEstoque fc = new FormEstoque();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnEstoqueActionPerformed
+
+    private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
+        FormVendas fc = new FormVendas();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnVendasActionPerformed
+
+    private void btnHistoricoVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoricoVendaActionPerformed
+        FormHistoricoVendas fc = new FormHistoricoVendas();
+        fc.setVisible(true);
+    }//GEN-LAST:event_btnHistoricoVendaActionPerformed
+
 private void customizeMenuBar(JMenuBar menuBar) {
     menuBar.setUI(new BasicMenuBarUI() {
         @Override
@@ -357,6 +485,13 @@ private void changeComponentColors(Component comp) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Panel background;
+    private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnEstoque;
+    private javax.swing.JButton btnFornecedores;
+    private javax.swing.JButton btnFuncionarios;
+    private javax.swing.JButton btnHistoricoVenda;
+    private javax.swing.JButton btnProdutos;
+    private javax.swing.JButton btnVendas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -374,6 +509,8 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenuBar menuBar;
     private java.awt.Panel painelDireita;
     private java.awt.Panel painelEsquerda;

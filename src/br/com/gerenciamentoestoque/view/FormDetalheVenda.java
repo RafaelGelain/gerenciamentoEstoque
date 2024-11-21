@@ -160,7 +160,7 @@ public class FormDetalheVenda extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo ", "Produto ", "Quantidade", "Preço"
+                "Codigo ", "Produto ", "Quantidade", "Preço", "Valor Total"
             }
         ));
         jScrollPane1.setViewportView(carrinho);
