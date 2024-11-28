@@ -3,6 +3,7 @@ package br.com.gerenciamentoestoque.view;
 import br.com.gerenciamentoestoque.dao.ClientesDAO;
 import br.com.gerenciamentoestoque.func.Utilitarios;
 import br.com.gerenciamentoestoque.model.Clientes;
+import br.com.gerenciamentoestoque.relatorios.relClientes;
 import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -446,6 +447,11 @@ public class FormClientes extends javax.swing.JFrame {
 
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gerenciamentoestoque/imagens/icone_impressora.png"))); // NOI18N
         btnImprimir.setText("Imprimir");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -699,6 +705,11 @@ public class FormClientes extends javax.swing.JFrame {
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        this.dispose();
+        new relClientes();
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
     /**
      * @param args the command line arguments
