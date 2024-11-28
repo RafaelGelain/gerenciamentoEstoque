@@ -366,42 +366,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="912" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="922" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="699" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
-                  <Properties>
-                    <Property name="columns" type="int" value="20"/>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="0"/>
-                    </Property>
-                    <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Resumo das Features do Sistema de Gerenciamento de Estoque&#xa;Gest&#xe3;o de Clientes&#xa;&#xa;Possibilidade de cadastrar novos clientes, atualizar dados existentes, consultar informa&#xe7;&#xf5;es e remover registros quando necess&#xe1;rio.&#xa;Formul&#xe1;rio simples e intuitivo para adicionar dados como nome, endere&#xe7;o, telefone e CPF/CNPJ.&#xa;Gest&#xe3;o de Funcion&#xe1;rios&#xa;&#xa;Ferramenta pr&#xe1;tica para gerenciar o cadastro de funcion&#xe1;rios, permitindo adicionar, atualizar, consultar ou excluir informa&#xe7;&#xf5;es.&#xa;Campos personalizados para registrar dados como nome, cargo e formas de contato.&#xa;Gest&#xe3;o de Fornecedores&#xa;&#xa;Fun&#xe7;&#xe3;o dedicada para adicionar fornecedores, revisar ou atualizar informa&#xe7;&#xf5;es e excluir registros obsoletos.&#xa;Facilita o controle de dados como raz&#xe3;o social, CNPJ, endere&#xe7;o e telefone de contato.&#xa;Gest&#xe3;o de Produtos e Estoque&#xa;&#xa;Cadastro f&#xe1;cil de produtos com informa&#xe7;&#xf5;es completas, como nome, c&#xf3;digo, categoria, pre&#xe7;o e quantidade.&#xa;Consulta r&#xe1;pida de produtos por filtros como nome ou categoria para localizar o que voc&#xea; precisa.&#xa;Controle de estoque integrado que atualiza automaticamente as quantidades conforme entradas e sa&#xed;das.&#xa;Gest&#xe3;o de Vendas&#xa;&#xa;Processo simplificado para realizar vendas, permitindo selecionar produtos e associar a um cliente.&#xa;Diversas op&#xe7;&#xf5;es de formas de pagamento, como dinheiro ou cart&#xe3;o.&#xa;Redu&#xe7;&#xe3;o autom&#xe1;tica no estoque com base nos itens vendidos."/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

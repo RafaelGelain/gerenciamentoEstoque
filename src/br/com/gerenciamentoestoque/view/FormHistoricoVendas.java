@@ -224,6 +224,7 @@ public class FormHistoricoVendas extends javax.swing.JFrame {
         for(ItensVendas i : lista){
             dados.addRow(new Object[]{
                 i.getProdutos().getId(),
+                i.getProdutos().getDescricao(),
                 i.getQtd(),
                 i.getProdutos().getPreco(),
                 i.getSubtotal()

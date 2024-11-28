@@ -38,8 +38,6 @@ public class Main extends javax.swing.JFrame {
         btnVendas = new javax.swing.JButton();
         btnHistoricoVenda = new javax.swing.JButton();
         painelDireita = new java.awt.Panel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -183,25 +181,15 @@ public class Main extends javax.swing.JFrame {
 
         painelDireita.setBackground(new java.awt.Color(249, 255, 255));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Resumo das Features do Sistema de Gerenciamento de Estoque\nGestão de Clientes\n\nPossibilidade de cadastrar novos clientes, atualizar dados existentes, consultar informações e remover registros quando necessário.\nFormulário simples e intuitivo para adicionar dados como nome, endereço, telefone e CPF/CNPJ.\nGestão de Funcionários\n\nFerramenta prática para gerenciar o cadastro de funcionários, permitindo adicionar, atualizar, consultar ou excluir informações.\nCampos personalizados para registrar dados como nome, cargo e formas de contato.\nGestão de Fornecedores\n\nFunção dedicada para adicionar fornecedores, revisar ou atualizar informações e excluir registros obsoletos.\nFacilita o controle de dados como razão social, CNPJ, endereço e telefone de contato.\nGestão de Produtos e Estoque\n\nCadastro fácil de produtos com informações completas, como nome, código, categoria, preço e quantidade.\nConsulta rápida de produtos por filtros como nome ou categoria para localizar o que você precisa.\nControle de estoque integrado que atualiza automaticamente as quantidades conforme entradas e saídas.\nGestão de Vendas\n\nProcesso simplificado para realizar vendas, permitindo selecionar produtos e associar a um cliente.\nDiversas opções de formas de pagamento, como dinheiro ou cartão.\nRedução automática no estoque com base nos itens vendidos.");
-        jScrollPane1.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout painelDireitaLayout = new javax.swing.GroupLayout(painelDireita);
         painelDireita.setLayout(painelDireitaLayout);
         painelDireitaLayout.setHorizontalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDireitaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE))
+            .addGap(0, 922, Short.MAX_VALUE)
         );
         painelDireitaLayout.setVerticalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDireitaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1))
+            .addGap(0, 699, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
@@ -415,7 +403,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClientesActionPerformed
 
     private void btnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuncionariosActionPerformed
-         FormFuncionarios fc = new FormFuncionarios();
+        FormFuncionarios fc = new FormFuncionarios();
         fc.setVisible(true);
     }//GEN-LAST:event_btnFuncionariosActionPerformed
 
@@ -509,8 +497,6 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenuBar menuBar;
     private java.awt.Panel painelDireita;
     private java.awt.Panel painelEsquerda;
