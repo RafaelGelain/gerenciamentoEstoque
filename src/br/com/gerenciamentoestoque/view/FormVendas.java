@@ -91,14 +91,13 @@ public class FormVendas extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         txtQtd = new javax.swing.JTextField();
         btnAdicionar = new javax.swing.JButton();
-        TabelaInferior = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        carrinho = new javax.swing.JTable();
         TabelaInferior1 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         txtTotalVenda = new javax.swing.JTextField();
         btnPagamento = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        TabelaInferior = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        carrinho = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("StockManager");
@@ -567,6 +566,28 @@ public class FormVendas extends javax.swing.JFrame {
 
         TabelaMeio2.setViewportView(TabelaMeio);
 
+        TabelaInferior1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Preço Total :");
+
+        txtTotalVenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtTotalVenda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTotalVenda.setEnabled(false);
+        txtTotalVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalVendaActionPerformed(evt);
+            }
+        });
+
+        btnPagamento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPagamento.setText("Efetuar Pagamento");
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagamentoActionPerformed(evt);
+            }
+        });
+
         TabelaInferior.setBackground(new java.awt.Color(255, 255, 255));
         TabelaInferior.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORÇAMENTO :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
@@ -587,44 +608,12 @@ public class FormVendas extends javax.swing.JFrame {
         TabelaInferior.setLayout(TabelaInferiorLayout);
         TabelaInferiorLayout.setHorizontalGroup(
             TabelaInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1268, Short.MAX_VALUE)
         );
         TabelaInferiorLayout.setVerticalGroup(
             TabelaInferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TabelaInferiorLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
         );
-
-        TabelaInferior1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("Preço Total :");
-
-        txtTotalVenda.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtTotalVenda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtTotalVenda.setEnabled(false);
-        txtTotalVenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalVendaActionPerformed(evt);
-            }
-        });
-
-        btnPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gerenciamentoestoque/imagens/icone_salvar.png"))); // NOI18N
-        btnPagamento.setText("Efetuar Pagamento");
-        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPagamentoActionPerformed(evt);
-            }
-        });
-
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gerenciamentoestoque/imagens/icone_salvar.png"))); // NOI18N
-        btnCancelar.setText("Cancelar Orçamento");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout TabelaInferior1Layout = new javax.swing.GroupLayout(TabelaInferior1);
         TabelaInferior1.setLayout(TabelaInferior1Layout);
@@ -633,27 +622,26 @@ public class FormVendas extends javax.swing.JFrame {
             .addGroup(TabelaInferior1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TabelaInferior1Layout.createSequentialGroup()
-                        .addComponent(btnPagamento)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnCancelar))
-                    .addGroup(TabelaInferior1Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(18, 18, 18)
+                .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(TabelaInferior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         TabelaInferior1Layout.setVerticalGroup(
             TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TabelaInferior1Layout.createSequentialGroup()
-                .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPagamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                .addContainerGap()
+                .addComponent(TabelaInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(TabelaInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(TabelaInferior1Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTotalVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -661,7 +649,6 @@ public class FormVendas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(TabelaSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(TabelaInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(TabelaMeio2, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
             .addComponent(TabelaInferior1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -670,9 +657,7 @@ public class FormVendas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(TabelaSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TabelaMeio2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TabelaInferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TabelaMeio2, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabelaInferior1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -725,10 +710,6 @@ public class FormVendas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Dados invalidos !");
         }
     }//GEN-LAST:event_btnPagamentoActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
@@ -949,7 +930,6 @@ public class FormVendas extends javax.swing.JFrame {
     private javax.swing.JScrollPane TabelaMeio2;
     private javax.swing.JPanel TabelaSuperior;
     private javax.swing.JButton btnAdicionar;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnPagamento;
     private javax.swing.JButton btnPesquisarCliente;
     private javax.swing.JButton btnPesquisarProduto;
