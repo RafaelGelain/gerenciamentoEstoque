@@ -117,6 +117,7 @@ public class FormEstoque extends javax.swing.JFrame {
         jLabel4.setText("Preço:");
 
         txtPreco.setEditable(false);
+        txtPreco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Quantidade");
@@ -129,10 +130,10 @@ public class FormEstoque extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Quantidade teste :");
+        jLabel5.setText("Quantidade Atual :");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Quantidade :");
+        jLabel6.setText("Quantidade Nova:");
 
         txtQtdNova.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

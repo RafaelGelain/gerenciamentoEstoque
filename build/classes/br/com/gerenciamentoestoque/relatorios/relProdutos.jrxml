@@ -10,58 +10,21 @@
 		</conditionalStyle>
 	</style>
 	<queryString>
-		<![CDATA[select * from funcionarios
-]]>
+		<![CDATA[select p.id,p.descricao,p.preco,p.qtd_estoque,f.nome from produtos as p inner join fornecedores as f on(p.for_id=f.id)]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qtd_estoque" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="nome" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="rg" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="cpf" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="email" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="senha" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="cargo" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="nivel" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="telefone" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="celular" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="cep" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="endereco" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="numero" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="complemento" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="bairro" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="cidade" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="estado" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<background>
@@ -85,72 +48,85 @@
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Relatorios de Funcionarios]]></text>
+				<text><![CDATA[Relatorios de Produtos]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="42" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="f28337a4-fe6a-4e57-8e51-22df06e24eda"/>
+				<reportElement mode="Opaque" x="0" y="0" width="61" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="4e3e6c5c-2a1e-42d5-b587-eccf827d6f9e"/>
 				<textElement>
 					<font fontName="Arial" size="11"/>
 				</textElement>
 				<text><![CDATA[Codigo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="42" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="b9e1baf0-51de-43c7-a600-5a423e5b87f3"/>
+				<reportElement mode="Opaque" x="61" y="0" width="187" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="eb16c95e-9645-45fc-912c-4261d465b2b7"/>
 				<textElement>
 					<font fontName="Arial" size="11"/>
 				</textElement>
-				<text><![CDATA[Nome]]></text>
+				<text><![CDATA[Descrição ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="515" y="0" width="40" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="1f4a07fa-a475-4253-b5fe-dae3926b6c1c"/>
+				<reportElement mode="Opaque" x="336" y="0" width="72" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="9ea510be-2d28-46ee-b1be-ba27b8dbcd9a"/>
 				<textElement>
-					<font fontName="Arial" size="11" isBold="false"/>
+					<font fontName="Arial" size="11"/>
 				</textElement>
-				<text><![CDATA[Estado]]></text>
+				<text><![CDATA[Quantidade ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="122" y="0" width="270" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="1e84369f-9be7-413f-a7df-01aa4da37867"/>
+				<reportElement mode="Opaque" x="408" y="0" width="147" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="d2e08ad0-8e70-4153-a4cb-f40f6298eccf"/>
 				<textElement>
-					<font fontName="Arial" size="11" isBold="false"/>
+					<font fontName="Arial" size="11"/>
 				</textElement>
-				<text><![CDATA[Endereço]]></text>
+				<text><![CDATA[Fornecedor]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="392" y="0" width="123" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="e32bc777-e444-4374-8c63-33ebee85cb64"/>
+				<reportElement mode="Opaque" x="248" y="0" width="88" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="3ae5b5c1-c027-48df-bba2-91ed61bfca26"/>
 				<textElement>
-					<font fontName="Arial" size="11" isBold="false"/>
+					<font fontName="Arial" size="11"/>
 				</textElement>
-				<text><![CDATA[Telefone]]></text>
+				<text><![CDATA[Preço ]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement style="linhasAlternadas" x="-1" y="0" width="43" height="20" uuid="5f3dfe7c-6321-437f-80c1-51a04a91fe3e"/>
-				<box leftPadding="2"/>
+				<reportElement style="linhasAlternadas" x="0" y="0" width="61" height="20" uuid="0961e06d-451d-46ee-99b5-a5cb09b500b0"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="linhasAlternadas" x="42" y="0" width="92" height="20" uuid="58a272fb-e159-4f0f-8b6d-bbbbbc0bd8c6"/>
-				<box leftPadding="2"/>
+				<reportElement style="linhasAlternadas" x="61" y="0" width="187" height="20" uuid="b168bbff-f587-40f1-a774-533828c083d4"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="linhasAlternadas" x="336" y="0" width="72" height="20" uuid="173571aa-cd0c-492a-a4e5-072493ca7681"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qtd_estoque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="linhasAlternadas" x="408" y="0" width="147" height="20" uuid="ceeed4bf-d83c-4ad2-b8a8-fc9e22dcdca0"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="linhasAlternadas" x="122" y="0" width="270" height="20" uuid="0959c7e2-e76b-4903-9419-450e4414c21c"/>
-				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="515" y="0" width="40" height="20" uuid="5522fee8-2b8a-4501-985c-dc4dce9d2d79"/>
-				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="392" y="0" width="123" height="20" uuid="a9453c58-551a-4914-959c-7eb13f930e16"/>
-				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+				<reportElement style="linhasAlternadas" x="248" y="0" width="88" height="20" uuid="38e47152-304d-4ac7-9a30-41277cb19480"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="19" width="555" height="1" uuid="9df94cc4-d181-4678-ad1b-66838a79f8be"/>

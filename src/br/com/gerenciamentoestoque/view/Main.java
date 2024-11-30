@@ -1,6 +1,10 @@
 
 package br.com.gerenciamentoestoque.view;
 
+import br.com.gerenciamentoestoque.relatorios.relClientes;
+import br.com.gerenciamentoestoque.relatorios.relFornecedores;
+import br.com.gerenciamentoestoque.relatorios.relFuncionarios;
+import br.com.gerenciamentoestoque.relatorios.relProdutos;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -58,14 +62,18 @@ public class Main extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        gerarRelatorioCliente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        gerarRelatorioFunc = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        gerarRelatorioForn = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        gerarRelProd = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -273,7 +281,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel17)
                     .addComponent(jLabel16)
                     .addComponent(jLabel15))
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         painelDireitaLayout.setVerticalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,6 +353,14 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        gerarRelatorioCliente.setText("Gerar relatorio de Clientes");
+        gerarRelatorioCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerarRelatorioClienteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(gerarRelatorioCliente);
+
         menuBar.add(jMenu1);
 
         jMenu2.setText("Funcionarios  ");
@@ -357,6 +373,14 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
+        gerarRelatorioFunc.setText("Gerar relatorio de Funcionarios");
+        gerarRelatorioFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerarRelatorioFuncActionPerformed(evt);
+            }
+        });
+        jMenu2.add(gerarRelatorioFunc);
+
         menuBar.add(jMenu2);
 
         jMenu3.setText("Fornecedores  ");
@@ -368,6 +392,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem3);
+
+        gerarRelatorioForn.setText("jMenuItem11");
+        gerarRelatorioForn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerarRelatorioFornActionPerformed(evt);
+            }
+        });
+        jMenu3.add(gerarRelatorioForn);
 
         menuBar.add(jMenu3);
 
@@ -396,6 +428,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu4.add(jMenuItem6);
+
+        gerarRelProd.setText("Relatorio");
+        gerarRelProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerarRelProdActionPerformed(evt);
+            }
+        });
+        jMenu4.add(gerarRelProd);
 
         menuBar.add(jMenu4);
 
@@ -555,6 +595,22 @@ public class Main extends javax.swing.JFrame {
         fc.setVisible(true);
     }//GEN-LAST:event_btnHistoricoVendaActionPerformed
 
+    private void gerarRelatorioClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarRelatorioClienteActionPerformed
+        new relClientes();
+    }//GEN-LAST:event_gerarRelatorioClienteActionPerformed
+
+    private void gerarRelatorioFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarRelatorioFuncActionPerformed
+        new relFuncionarios();
+    }//GEN-LAST:event_gerarRelatorioFuncActionPerformed
+
+    private void gerarRelatorioFornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarRelatorioFornActionPerformed
+        new relFornecedores();
+    }//GEN-LAST:event_gerarRelatorioFornActionPerformed
+
+    private void gerarRelProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarRelProdActionPerformed
+        new relProdutos();
+    }//GEN-LAST:event_gerarRelProdActionPerformed
+
 private void customizeMenuBar(JMenuBar menuBar) {
     menuBar.setUI(new BasicMenuBarUI() {
         @Override
@@ -603,6 +659,10 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JButton btnHistoricoVenda;
     private javax.swing.JButton btnProdutos;
     private javax.swing.JButton btnVendas;
+    private javax.swing.JMenuItem gerarRelProd;
+    private javax.swing.JMenuItem gerarRelatorioCliente;
+    private javax.swing.JMenuItem gerarRelatorioForn;
+    private javax.swing.JMenuItem gerarRelatorioFunc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -10,7 +10,8 @@
 		</conditionalStyle>
 	</style>
 	<queryString>
-		<![CDATA[select * from clientes]]>
+		<![CDATA[select * from funcionarios
+]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -25,6 +26,15 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="senha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nivel" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="telefone" class="java.lang.String">
@@ -75,7 +85,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Relatorios Clientes]]></text>
+				<text><![CDATA[Relatorios de Funcionarios]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
@@ -96,46 +106,25 @@
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="122" y="0" width="93" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="b2525b16-be6e-44c1-8250-b7ceb2a0ae13"/>
+				<reportElement mode="Opaque" x="515" y="0" width="40" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="1f4a07fa-a475-4253-b5fe-dae3926b6c1c"/>
 				<textElement>
-					<font fontName="Arial" size="11"/>
-				</textElement>
-				<text><![CDATA[Telefone]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="215" y="0" width="89" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="d285a5f1-c109-4778-b09b-c61b076803e2"/>
-				<textElement>
-					<font fontName="Arial" size="11"/>
-				</textElement>
-				<text><![CDATA[Celular]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="381" y="0" width="59" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="869854aa-3f2c-4580-a4ef-cef7906256cb"/>
-				<textElement>
-					<font fontName="Arial" size="11"/>
-				</textElement>
-				<text><![CDATA[Cidade]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="440" y="0" width="79" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="6e3fba6f-8da9-43b9-97ee-e7efe09445f7"/>
-				<textElement>
-					<font fontName="Arial" size="11"/>
-				</textElement>
-				<text><![CDATA[Bairro]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Opaque" x="519" y="0" width="36" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="871b7566-b8f0-4dba-870b-350671d761ba"/>
-				<textElement>
-					<font fontName="Arial" size="11"/>
+					<font fontName="Arial" size="11" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Estado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="304" y="0" width="77" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="396316df-757b-4b62-bb78-ee5790af8794"/>
+				<reportElement mode="Opaque" x="122" y="0" width="270" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="1e84369f-9be7-413f-a7df-01aa4da37867"/>
 				<textElement>
-					<font fontName="Arial" size="11"/>
+					<font fontName="Arial" size="11" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Endereco]]></text>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="392" y="0" width="123" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="e32bc777-e444-4374-8c63-33ebee85cb64"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -147,39 +136,21 @@
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="linhasAlternadas" x="122" y="0" width="93" height="20" uuid="9400c8c5-4f4d-4949-ba54-271aec337daf"/>
-				<box leftPadding="2"/>
-				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="215" y="0" width="89" height="20" uuid="4a29c3c9-5f76-4463-9282-1ed16486c2ea"/>
-				<box leftPadding="2"/>
-				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="381" y="0" width="59" height="20" uuid="791ed29a-1a19-45e5-a23e-de0b0103645a"/>
-				<box leftPadding="2"/>
-				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="440" y="0" width="79" height="20" uuid="01d7697c-52d8-4d25-b141-7344f60ff0c1"/>
-				<box leftPadding="2"/>
-				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="519" y="0" width="36" height="20" uuid="9bfa2d9c-8c84-4dec-a143-643f98295acb"/>
-				<box leftPadding="2"/>
-				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement style="linhasAlternadas" x="42" y="0" width="80" height="20" uuid="58a272fb-e159-4f0f-8b6d-bbbbbc0bd8c6"/>
+				<reportElement style="linhasAlternadas" x="42" y="0" width="92" height="20" uuid="58a272fb-e159-4f0f-8b6d-bbbbbc0bd8c6"/>
 				<box leftPadding="2"/>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="linhasAlternadas" x="304" y="0" width="77" height="20" uuid="b28a870c-1415-40c6-b928-3e044e898bc7"/>
-				<box leftPadding="2"/>
+				<reportElement style="linhasAlternadas" x="122" y="0" width="270" height="20" uuid="0959c7e2-e76b-4903-9419-450e4414c21c"/>
 				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="linhasAlternadas" x="515" y="0" width="40" height="20" uuid="5522fee8-2b8a-4501-985c-dc4dce9d2d79"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="linhasAlternadas" x="392" y="0" width="123" height="20" uuid="a9453c58-551a-4914-959c-7eb13f930e16"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="19" width="555" height="1" uuid="9df94cc4-d181-4678-ad1b-66838a79f8be"/>
