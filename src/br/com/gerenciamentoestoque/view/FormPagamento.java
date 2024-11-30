@@ -8,6 +8,8 @@ import br.com.gerenciamentoestoque.model.Clientes;
 import br.com.gerenciamentoestoque.model.ItensVendas;
 import br.com.gerenciamentoestoque.model.Produtos;
 import br.com.gerenciamentoestoque.model.Vendas;
+import br.com.gerenciamentoestoque.relatorios.relProdutos;
+import br.com.gerenciamentoestoque.relatorios.relVendas;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -44,6 +46,7 @@ public class FormPagamento extends javax.swing.JFrame {
         txtObservacoes = new javax.swing.JTextField();
         txtTotalVenda = new javax.swing.JTextField();
         btnPagar = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("StockManager");
@@ -106,6 +109,14 @@ public class FormPagamento extends javax.swing.JFrame {
             }
         });
 
+        btnImprimir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnImprimir.setText("teste");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,7 +142,8 @@ public class FormPagamento extends javax.swing.JFrame {
                         .addComponent(btnPagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtCheque, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(txtCartao)
-                        .addComponent(txtDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnImprimir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
@@ -164,7 +176,9 @@ public class FormPagamento extends javax.swing.JFrame {
                 .addComponent(txtObservacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,11 +229,16 @@ public class FormPagamento extends javax.swing.JFrame {
                 dispose();
                 FormVendas fv = new FormVendas();
                 fv.setVisible(true);
+                new relVendas();
             }
         }else{
             JOptionPane.showMessageDialog(null, "Valor a ser pago não bate com o valor da venda !");
         }
     }//GEN-LAST:event_btnPagarActionPerformed
+
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        new relVendas();
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,6 +276,7 @@ public class FormPagamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnPagar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

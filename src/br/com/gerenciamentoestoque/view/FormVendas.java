@@ -599,7 +599,7 @@ public class FormVendas extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo ", "Produto ", "Quantidade", "Preço", "SubTotal"
+                "Codigo ", "Produto ", "Quantidade", "Preço", "Total", "Desconto"
             }
         ));
         jScrollPane2.setViewportView(carrinho);
@@ -735,10 +735,6 @@ public class FormVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQtdEstoqueActionPerformed
 
-    private void txtDescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescontoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescontoActionPerformed
-
     private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
     if(evt.getKeyCode()== KeyEvent.VK_ENTER){   
         String nome = txtNome.getText();
@@ -862,12 +858,26 @@ public class FormVendas extends javax.swing.JFrame {
         Produtos obj = new Produtos();
         ProdutosDAO daop = new ProdutosDAO();
         obj = daop.BuscarProdutos(nome);
+        
         if(obj.getDescricao() !=null){
             int estoque = Integer.valueOf(txtQtdEstoque.getText());
             int quantidade = Integer.valueOf(txtQtd.getText());
             preco = Double.valueOf(txtPreco.getText());
             qtd = Integer.valueOf(txtQtd.getText());
-            subtotal = preco*qtd;
+            
+            // Verificar se há desconto
+            double descontoPercentual = 0.0;
+            if (!txtDesconto.getText().isEmpty()) {
+                descontoPercentual = Double.valueOf(txtDesconto.getText()); // Desconto em porcentagem
+                // Validar se o desconto está entre 0 e 100%
+                if (descontoPercentual < 0 || descontoPercentual > 40) {
+                    JOptionPane.showMessageDialog(null, "Desconto inválido! Informe um valor entre 0 e 40.");
+                    return; // Interrompe o fluxo caso o desconto seja inválido
+                }
+            }            
+            
+            double valorDesconto = preco * (descontoPercentual / 100);
+            subtotal = (preco - valorDesconto) * qtd;
             total += subtotal;
             if(estoque>=quantidade){
                 txtTotalVenda.setText(String.valueOf(total));
@@ -877,7 +887,8 @@ public class FormVendas extends javax.swing.JFrame {
                     txtDescricao.getText(),
                     txtQtd.getText(),
                     txtPreco.getText(),
-                    subtotal
+                    subtotal,
+                    descontoPercentual + "%", // Mostra o desconto em porcentagem
                 });
             }
             else{
@@ -887,6 +898,10 @@ public class FormVendas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos com as informações !");
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void txtDescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescontoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescontoActionPerformed
 
     /**
      * @param args the command line arguments
