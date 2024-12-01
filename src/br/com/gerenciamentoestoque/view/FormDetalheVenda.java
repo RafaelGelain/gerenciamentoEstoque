@@ -5,6 +5,9 @@
  */
 package br.com.gerenciamentoestoque.view;
 
+import br.com.gerenciamentoestoque.relatorios.relVendas;
+import br.com.gerenciamentoestoque.relatorios.relVendas2Via;
+
 
 public class FormDetalheVenda extends javax.swing.JFrame {
 
@@ -33,6 +36,7 @@ public class FormDetalheVenda extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         carrinho = new javax.swing.JTable();
+        btnVia = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("StockManager");
@@ -154,6 +158,13 @@ public class FormDetalheVenda extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(carrinho);
 
+        btnVia.setText("Imprimir 2º Via");
+        btnVia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,6 +172,9 @@ public class FormDetalheVenda extends javax.swing.JFrame {
             .addComponent(PainelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Meio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnVia, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,12 +184,19 @@ public class FormDetalheVenda extends javax.swing.JFrame {
                 .addComponent(Meio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnVia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnViaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViaActionPerformed
+        int id = Integer.valueOf(txtIdVenda.getText());
+        new relVendas2Via(id);
+    }//GEN-LAST:event_btnViaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,6 +236,7 @@ public class FormDetalheVenda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Meio;
     private javax.swing.JPanel PainelSuperior;
+    private javax.swing.JButton btnVia;
     public javax.swing.JTable carrinho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
