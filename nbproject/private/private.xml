@@ -4,9 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/FormDetalheVenda.java</file>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/relatorios/relVendas2Via.java</file>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/FormHistoricoVendas.java</file>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/relatorios/relVendas2Via.jrxml</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/dao/FuncionariosDAO.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/Main.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/FormVendas.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/FormLogin.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/gerenciamentoEstoque/src/br/com/gerenciamentoestoque/view/FormClientes.java</file>
         </group>
     </open-files>
 </project-private>

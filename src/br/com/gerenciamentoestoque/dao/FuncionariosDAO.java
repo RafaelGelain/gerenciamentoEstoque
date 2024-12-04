@@ -203,24 +203,22 @@ public class FuncionariosDAO {
         }
         return null;
     }
-    public void efetuarLogin(String email, String senha){
+    public boolean efetuarLogin(String email, String senha){
         try {
             String sql = "select * from funcionarios where email=? and senha=?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, email);
             stmt.setString(2, senha);
-            
+
             ResultSet rs = stmt.executeQuery();
-            if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Seja Bem Vindo Ao Sistema");
-                Main at = new Main();
-                at.setVisible(true);
-            }else{
-                FormLogin login = new FormLogin();
-                JOptionPane.showMessageDialog(null, "Dados Invalidos");
+            if (rs.next()) {
+                return true; // Login bem-sucedido
+            } else {
+                return false; // Login inválido
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "erro"+e);
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            return false; // Retorna false em caso de erro
         }
     }
 }

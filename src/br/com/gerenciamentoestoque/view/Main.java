@@ -9,6 +9,7 @@ import br.com.gerenciamentoestoque.relatorios.relVendas;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -60,6 +61,7 @@ public class Main extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -78,7 +80,6 @@ public class Main extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -94,7 +95,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        background.setBackground(new java.awt.Color(51, 51, 0));
+        background.setBackground(new java.awt.Color(204, 204, 204));
 
         painelEsquerda.setBackground(new java.awt.Color(249, 255, 255));
 
@@ -211,98 +212,111 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel2.setText("Gestão de Clientes");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("Possibilidade de cadastrar novos clientes, atualizar dados existentes, consultar informações e remover registros quando necessário.\n");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("Formulário simples e intuitivo para adicionar dados como nome, endereço, telefone e CPF/CNPJ.");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel5.setText("Gestão de Funcionários");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel6.setText("Ferramenta prática para gerenciar o cadastro de funcionários, permitindo adicionar, atualizar, consultar ou excluir informações.");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel7.setText("Campos personalizados para registrar dados como nome, cargo e formas de contato.");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel8.setText("Facilita o controle de dados como razão social, CNPJ, endereço e telefone de contato.");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel9.setText("Função dedicada para adicionar fornecedores, revisar ou atualizar informações e excluir registros obsoletos.");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel10.setText("Gestão de Fornecedores");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel11.setText("Consulta rápida de produtos por filtros como nome ou categoria para localizar o que você precisa.");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel12.setText("Cadastro fácil de produtos com informações completas, como nome, código, categoria, preço e quantidade.");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel13.setText("Gestão de Produtos e Estoque");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel14.setText("Controle de estoque integrado que atualiza automaticamente as quantidades conforme entradas e saídas.");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel15.setText("Redução automática no estoque com base nos itens vendidos.");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel16.setText("Diversas opções de formas de pagamento, como dinheiro ou cartão.");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel17.setText("Processo simplificado para realizar vendas, permitindo selecionar produtos e associar a um cliente.");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel18.setText("Gestão de Vendas");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jLabel19.setText("Features :");
 
         javax.swing.GroupLayout painelDireitaLayout = new javax.swing.GroupLayout(painelDireita);
         painelDireita.setLayout(painelDireitaLayout);
         painelDireitaLayout.setHorizontalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDireitaLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel15))
-                .addContainerGap(118, Short.MAX_VALUE))
+                    .addGroup(painelDireitaLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelDireitaLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel18)))
+                    .addGroup(painelDireitaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel19)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelDireitaLayout.setVerticalGroup(
             painelDireitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDireitaLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
@@ -355,7 +369,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        gerarRelatorioCliente.setText("Gerar relatorio de Clientes");
+        gerarRelatorioCliente.setText("Relatorio de Clientes");
         gerarRelatorioCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gerarRelatorioClienteActionPerformed(evt);
@@ -375,7 +389,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        gerarRelatorioFunc.setText("Gerar relatorio de Funcionarios");
+        gerarRelatorioFunc.setText("Relatorio de Funcionarios");
         gerarRelatorioFunc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gerarRelatorioFuncActionPerformed(evt);
@@ -395,7 +409,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem3);
 
-        gerarRelatorioForn.setText("jMenuItem11");
+        gerarRelatorioForn.setText("Relatorio de Fornecedores");
         gerarRelatorioForn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gerarRelatorioFornActionPerformed(evt);
@@ -431,7 +445,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem6);
 
-        gerarRelProd.setText("Relatorio");
+        gerarRelProd.setText("Relatorio de Produtos");
         gerarRelProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gerarRelProdActionPerformed(evt);
@@ -458,14 +472,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu5.add(jMenuItem10);
-
-        jMenuItem11.setText("jMenuItem11");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem11);
 
         menuBar.add(jMenu5);
 
@@ -621,10 +627,6 @@ public class Main extends javax.swing.JFrame {
         new relProdutos();
     }//GEN-LAST:event_gerarRelProdActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        new relVendas();
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
 private void customizeMenuBar(JMenuBar menuBar) {
     menuBar.setUI(new BasicMenuBarUI() {
         @Override
@@ -652,6 +654,16 @@ private void customizeMenuBar(JMenuBar menuBar) {
     }
 }
         //MUDAR DE COR MENU
+    public static void alterarCorBotao(JButton botao) {
+        // Cor personalizada
+        Color corFundo = new Color(14, 66, 86); // Cor de fundo
+        Color corTexto = Color.WHITE; // Cor do texto (branco)
+
+        // Alterando a cor do botão
+        botao.setBackground(corFundo);
+        botao.setForeground(corTexto);
+    }
+    
 private void changeComponentColors(Component comp) {
     comp.setBackground(new java.awt.Color(14, 66, 86));
     comp.setForeground(Color.white);
@@ -687,6 +699,7 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -703,7 +716,6 @@ private void changeComponentColors(Component comp) {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

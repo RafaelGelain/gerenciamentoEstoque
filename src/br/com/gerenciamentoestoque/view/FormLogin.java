@@ -6,7 +6,14 @@
 package br.com.gerenciamentoestoque.view;
 
 import br.com.gerenciamentoestoque.dao.FuncionariosDAO;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -41,7 +48,7 @@ public class FormLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setTitle("StockManager  - Login");
+        setTitle("StockManager");
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 780));
         setResizable(false);
@@ -65,6 +72,11 @@ public class FormLogin extends javax.swing.JFrame {
         });
 
         jButton1.setText("Recuperar Senha");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Entrar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -164,12 +176,68 @@ public class FormLogin extends javax.swing.JFrame {
             email = txtEmail.getText();
             senha = txtSenha.getText();
             FuncionariosDAO dao = new FuncionariosDAO();
-            dao.efetuarLogin(email, senha);
-            this.dispose();
+            
+        if (dao.efetuarLogin(email, senha)) {
+            JOptionPane.showMessageDialog(null, "Seja Bem Vindo Ao Sistema!");
+            Main at = new Main(); // Abre a próxima tela
+            at.setVisible(true);
+            this.dispose(); // Fecha a tela de login
+        } else {
+            JOptionPane.showMessageDialog(null, "Email ou senha inválidos. Tente novamente.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+        }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro : "+e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Cria o frame da recuperação de senha
+        JFrame frameRecuperar = new JFrame("Recuperar Senha");
+        frameRecuperar.setSize(400, 200);
+        frameRecuperar.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        // Centraliza a janela no monitor
+        frameRecuperar.setLocationRelativeTo(null);
+
+        // Define o layout para centralizar os componentes
+        frameRecuperar.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(10, 10, 10, 10); // Margem interna dos componentes
+
+        // Adiciona componentes na janela
+        JLabel labelEmail = new JLabel("Digite seu email:");
+        JTextField txtEmailRecuperar = new JTextField(20);
+        JButton btnEnviar = new JButton("Enviar");
+
+        // Ação do botão "Enviar"
+        btnEnviar.addActionListener(e -> {
+            String email = txtEmailRecuperar.getText();
+            if (email.isEmpty()) {
+                JOptionPane.showMessageDialog(frameRecuperar, "Por favor, insira um email válido.", "Erro", JOptionPane.ERROR_MESSAGE);
+            } else {
+                // Aqui você pode implementar a lógica de envio da recuperação de senha
+                JOptionPane.showMessageDialog(frameRecuperar, "Um email de recuperação foi enviado para: " + email, "Recuperação de Senha", JOptionPane.INFORMATION_MESSAGE);
+                frameRecuperar.dispose(); // Fecha a janela após o envio
+            }
+        });
+
+        // Adiciona os componentes ao layout (em posições ajustadas)
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        frameRecuperar.add(labelEmail, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        frameRecuperar.add(txtEmailRecuperar, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        frameRecuperar.add(btnEnviar, gbc);
+
+        // Torna a janela visível
+        frameRecuperar.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

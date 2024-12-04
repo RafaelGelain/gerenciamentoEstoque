@@ -95,7 +95,6 @@ public class FormFuncionarios extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
-        btnTESTE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("StockManager");
@@ -337,14 +336,6 @@ public class FormFuncionarios extends javax.swing.JFrame {
             }
         });
 
-        btnTESTE.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnTESTE.setText("teste");
-        btnTESTE.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTESTEActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout tabela_dadosclientesLayout = new javax.swing.GroupLayout(tabela_dadosclientes);
         tabela_dadosclientes.setLayout(tabela_dadosclientesLayout);
         tabela_dadosclientesLayout.setHorizontalGroup(
@@ -372,9 +363,7 @@ public class FormFuncionarios extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEditar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnTESTE, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tabela_dadosclientesLayout.createSequentialGroup()
                         .addGroup(tabela_dadosclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -434,7 +423,7 @@ public class FormFuncionarios extends javax.swing.JFrame {
                 .addContainerGap(287, Short.MAX_VALUE))
         );
 
-        tabela_dadosclientesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEditar, btnExcluir, btnSalvar, btnTESTE});
+        tabela_dadosclientesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEditar, btnExcluir, btnSalvar});
 
         tabela_dadosclientesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCelular, txtTelefone});
 
@@ -445,8 +434,7 @@ public class FormFuncionarios extends javax.swing.JFrame {
                 .addGroup(tabela_dadosclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(btnTESTE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addGap(37, 37, 37)
                 .addGroup(tabela_dadosclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(tabela_dadosclientesLayout.createSequentialGroup()
@@ -777,10 +765,6 @@ public class FormFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoActionPerformed
 
-    private void btnTESTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTESTEActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTESTEActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -824,7 +808,6 @@ public class FormFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton btnPesquisaNome;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnTESTE;
     private javax.swing.JComboBox<String> cbNivel;
     private javax.swing.JComboBox<String> cbUF;
     private javax.swing.JLabel jLabel1;
