@@ -4,20 +4,20 @@ Esta aplicação desktop foi desenvolvida em Java como parte do Trabalho de Conc
 
 ## Capturas de Tela
 ### Tela de Login
- ![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telalogin.png))
+ ![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telalogin.png)
 
 ### Tela Inicial
-![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telamain.png))
+![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telamain.png)
 
 ### Tela de Clientes
 Adicionei uma print somente da tela de clientes , mas possui 4 telas -> Clientes,Funcionarios,Fornecedores,Produto
-![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telacliente.png))
+![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telacliente.png)
 
 ### Tela do Estoque
-![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telaestoque.png))
+![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/telaestoque.png)
 
 ### Tela de Venda
-![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/formvenda.png))
+![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/formvenda.png)
 
 ### Nota De Venda
-![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/notavenda.png))
+![Image Alt]([image_url](https://github.com/RafaelGelain/gerenciamentoEstoque/blob/ccb7649be80f082251773d8ac22e8bf3353cbef9/notavenda.png)
